@@ -1,16 +1,133 @@
-# React + Vite
+# Rishav Kumar Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive developer portfolio built using React, Tailwind CSS, and React Router. This portfolio showcases my skills, projects, experience, and contact information in a clean and professional interface.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Add your deployed portfolio link here:
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📌 Features
 
-## Expanding the ESLint configuration
+- Responsive Design
+- Modern UI/UX
+- Smooth Scrolling Navigation
+- About Me Section
+- Skills & Technologies Showcase
+- Featured Projects
+- Contact Form
+- Resume Download
+- Mobile Friendly Layout
+- Project Details Page
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- React.js
+- React Router DOM
+- Tailwind CSS
+- JavaScript (ES6+)
+
+### Tools
+
+- Git
+- GitHub
+- VS Code
+- Vercel
+
+---
+
+## 📂 Project Structure
+
+```bash
+src
+│
+├── Components
+│   ├── Navbar.jsx
+│   ├── Home.jsx
+│   ├── About.jsx
+│   ├── Skill.jsx
+│   ├── Projects.jsx
+│   ├── Contact.jsx
+│   └── Footer.jsx
+│
+├── Pages
+│   ├── ProfileDetails.jsx
+│   └── ProjectDetails.jsx
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+---
+
+## 📸 Featured Projects
+
+### SmartSight
+
+AI-powered assistive wearable device designed for visually impaired individuals featuring obstacle detection, water detection, GPS tracking, voice alerts, and future AI integration.
+
+### Stay Finder
+
+Full-stack MERN property booking platform with authentication, CRUD operations, REST APIs, and optimized MongoDB performance.
+
+### Currency Converter
+
+Modern currency converter with real-time exchange rate API integration, supporting multiple international currencies with an intuitive user interface.
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/portfolio-website.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd portfolio-website
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start development server:
+
+```bash
+npm run dev
+```
+
+---
+
+## 📬 Contact
+
+**Rishav Kumar**
+
+Email: [rishavkumar4383@gmail.com](mailto:rishavkumar4383@gmail.com)
+
+LinkedIn:
+https://www.linkedin.com/in/rishav-kumar-2027b6263/
+
+GitHub:
+https://github.com/Rishav81
+
+---
+
+## © License
+
+This project is open source and available under the MIT License.
+
+---
+
+⭐ If you like this project, consider giving it a star on GitHub.
