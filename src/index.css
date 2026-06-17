@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Dancing+Script:wght@400;700&display=swap");
+
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Syne", sans-serif;
+  background-color: #0b1120;
+  overflow-x: hidden;
+}
+
+.cursive-font {
+  font-family: "Dancing Script", cursive;
+}
