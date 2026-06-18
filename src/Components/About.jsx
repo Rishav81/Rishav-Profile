@@ -38,6 +38,7 @@ const About = () => {
               <img
                 src="/Profile.png"
                 alt="Rishav Kumar"
+                loading="lazy"
                 className="
                   relative
                   w-[280px]

@@ -1,49 +1,14 @@
 import { Link } from "react-router-dom";
-import { FaLongArrowAltRight } from "react-icons/fa";
+import { projects } from "../Data/Projects";
 
-const projects = [
-  {
-    id: 1,
-    title: "SmartSight",
-    slug: "Smart-Sight",
-
-    tech: ["React", "ESP32", "IoT", "GPS"],
-    image: "/smartSight.png",
-  },
-
-  {
-    id: 2,
-    title: "Stay Finder",
-    slug: "Stay-Finder",
-
-    tech: ["React", "Node.js", "Express", "MongoDB"],
-
-    image: "/StayFinder.jpg",
-  },
-
-  {
-    id: 3,
-    title: "Currency Converter",
-    slug: "Currency-Converter",
-
-    tech: ["React", "API", "Tailwind CSS", "JavaScript"],
-
-    image: "/currency.jpg",
-  },
-];
-const Projects = () => {
+const AllProjects = () => {
   return (
-    <section
-      id="projects"
-      className="
-       py-12 md:py-24 
-        bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.12),transparent_35%),linear-gradient(to_bottom,#000000,#020617)]
-      "
-    >
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Heading */}
+    <section className="min-h-screen text-white py-12 md:py-16 px-6  bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.12),transparent_35%),linear-gradient(to_bottom,#000000,#020617)]">
+      <div className="max-w-7xl mx-auto ">
         <div className="text-center mb-16">
-          <span className="text-white tracking-widest uppercase">My Work</span>
+          <span className="text-white tracking-widest uppercase">
+            My Complete Projects
+          </span>
 
           <h2 className="cursive-font mt-4 text-4xl md:text-5xl font-bold text-[#6CB394]">
             Featured Projects
@@ -55,8 +20,6 @@ const Projects = () => {
             technology.
           </p>
         </div>
-
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <Link key={project.id} to={`/projects/${project.slug}`}>
@@ -165,29 +128,9 @@ const Projects = () => {
             </Link>
           ))}
         </div>
-
-        {/* View All Button */}
-        <Link
-          to="/all-projects"
-          className="
-            mt-12
-            flex
-            items-center
-            justify-center
-            gap-2
-            text-white
-            font-medium
-            hover:text-[#6CB394]
-            transition-colors
-            duration-300
-          "
-        >
-          View All Projects
-          <FaLongArrowAltRight />
-        </Link>
       </div>
     </section>
   );
 };
 
-export default Projects;
+export default AllProjects;

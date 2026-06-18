@@ -6,7 +6,7 @@ const Home = () => {
     >
       <div className="absolute top-40 left-20 w-40 h-40 bg-[#A6F4C5]/10 rounded-full blur-3xl" />
       <div className="absolute bottom-40 right-20 w-40 h-40 bg-[#A6F4C5]/10 rounded-full blur-3xl" />
-      <div className="max-w-7xl mx-auto px-6 pt-8 md:pt-32 flex flex-col min-h-screen">
+      <div className="max-w-7xl mx-auto px-6 pt-8 md:pt-24 flex flex-col min-h-screen">
         {/* Hero Text */}
         <div className="mb-12">
           <h4 className="   text-xl md:text-2xl font-bold mb-4 tracking-tighter">
@@ -37,6 +37,7 @@ const Home = () => {
               className="w-[350px] md:w-[550px]  object-cover"
               src="/pro1.png"
               alt="profile"
+              loading="lazy"
             />
           </div>
 

@@ -15,3 +15,13 @@ body {
 .cursive-font {
   font-family: "Dancing Script", cursive;
 }
+
+/* Hide scrollbar for Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+* {
+  scrollbar-width: none;
+}
