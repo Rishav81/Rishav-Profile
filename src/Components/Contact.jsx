@@ -1,5 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -12,10 +13,10 @@ const Contact = () => {
   const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [e.target.name]: e.target.value,
-    });
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -35,7 +36,6 @@ const Contact = () => {
     setStatus("");
 
     try {
-      // Email to you
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -43,7 +43,6 @@ const Contact = () => {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
 
-      // Auto reply to user
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_AUTOREPLY_ID,
@@ -74,22 +73,23 @@ const Contact = () => {
     <section
       id="contact"
       className="
-        py-16 md:py-24
+        scroll-mt-24
+        py-16 md:py-20 lg:py-24
         bg-[radial-gradient(circle_at_left,rgba(108,179,148,0.15),transparent_35%),linear-gradient(to_bottom,#020617,#000000)]
       "
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <span className="text-white tracking-widest uppercase">
             Get In Touch
           </span>
 
-          <h2 className="cursive-font mt-4 text-4xl md:text-5xl font-bold text-[#6CB394]">
+          <h2 className="cursive-font mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#6CB394]">
             Let's Connect
           </h2>
 
-          <p className="mt-6 max-w-2xl mx-auto text-gray-400">
+          <p className="mt-6 max-w-2xl mx-auto text-gray-400 leading-relaxed">
             Have a project idea, internship opportunity, or just want to
             connect? Feel free to reach out.
           </p>
@@ -97,20 +97,22 @@ const Contact = () => {
 
         {/* Content */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left Side */}
+          {/* Form */}
           <div
             className="
-              p-4 md:p-8
+              w-full
+              max-w-2xl
+              mx-auto
+              p-5 md:p-8
               rounded-3xl
               border border-white/10
-             
               backdrop-blur-sm
               hover:border-[#6CB394]/20
               transition-all
               duration-300
             "
           >
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name */}
               <div>
                 <label className="block text-gray-300 mb-2">Full Name</label>
@@ -118,6 +120,7 @@ const Contact = () => {
                 <input
                   type="text"
                   name="name"
+                  required
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Enter your name"
@@ -145,10 +148,11 @@ const Contact = () => {
 
                 <input
                   type="email"
-                  placeholder="Enter your email"
                   name="email"
+                  required
                   value={formData.email}
                   onChange={handleChange}
+                  placeholder="Enter your email"
                   className="
                     w-full
                     px-4
@@ -170,8 +174,9 @@ const Contact = () => {
                 <label className="block text-gray-300 mb-2">Phone Number</label>
 
                 <input
-                  type="phone"
+                  type="tel"
                   name="phone"
+                  required
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Enter your phone number"
@@ -197,9 +202,10 @@ const Contact = () => {
 
                 <textarea
                   name="message"
+                  required
+                  rows="5"
                   value={formData.message}
                   onChange={handleChange}
-                  rows="4"
                   placeholder="Write your message..."
                   className="
                     w-full
@@ -223,24 +229,25 @@ const Contact = () => {
                 type="submit"
                 disabled={loading}
                 className="
-    w-full
-    py-3
-    rounded-xl
-    bg-[#6CB394]
-    text-black
-    font-semibold
-    hover:scale-[1.02]
-    hover:shadow-[0_0_30px_rgba(108,179,148,0.5)]
-    transition-all
-    duration-300
-    disabled:opacity-70
-    disabled:cursor-not-allowed
-  "
+                  w-full
+                  py-3
+                  rounded-xl
+                  bg-[#6CB394]
+                  text-black
+                  font-semibold
+                  hover:scale-[1.02]
+                  hover:shadow-[0_0_30px_rgba(108,179,148,0.5)]
+                  transition-all
+                  duration-300
+                  disabled:opacity-70
+                  disabled:cursor-not-allowed
+                "
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>
+
               {status === "success" && (
-                <div className="mt-4 p-4 rounded-xl border border-green-500/30 bg-green-500/10 text-green-400 text-center">
+                <div className="p-4 rounded-xl border border-green-500/30 bg-green-500/10 text-green-400 text-center">
                   <p className="font-semibold">✅ Message Sent Successfully</p>
 
                   <p className="text-sm mt-1">
@@ -251,7 +258,7 @@ const Contact = () => {
               )}
 
               {status === "error" && (
-                <div className="mt-4 p-4 rounded-xl border border-red-500/30 bg-red-500/10 text-red-400 text-center">
+                <div className="p-4 rounded-xl border border-red-500/30 bg-red-500/10 text-red-400 text-center">
                   ❌ Failed to send message. Please check all fields and try
                   again.
                 </div>
@@ -259,14 +266,14 @@ const Contact = () => {
             </form>
           </div>
 
-          {/* Right Side */}
-          <div className="relative hidden md:flex justify-center">
-            {/* Glow */}
+          {/* Illustration - Desktop Only */}
+          <div className="relative hidden lg:flex justify-center">
             <div className="absolute w-72 h-72 bg-[#6CB394]/20 blur-[100px] rounded-full" />
 
             <img
               src="/contact.png"
               alt="Contact Illustration"
+              loading="lazy"
               className="
                 relative
                 w-full

@@ -23,16 +23,16 @@ const About = () => {
     <section
       id="about"
       className="
-       py-12 md:py-24 
+        scroll-mt-24
+        py-16 md:py-20 lg:py-24
         bg-[radial-gradient(circle_at_left,rgba(108,179,148,0.12),transparent_35%),linear-gradient(to_bottom,#000000,#0B1120)]
       "
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Side */}
-          <div className=" hidden md:flex justify-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* Left Side (Desktop Only) */}
+          <div className="hidden lg:flex justify-center">
             <div className="relative">
-              {/* Glow */}
               <div className="absolute inset-0 bg-[#6CB394]/20 blur-[90px] rounded-full pointer-events-none" />
 
               <img
@@ -41,9 +41,8 @@ const About = () => {
                 loading="lazy"
                 className="
                   relative
-                  w-[280px]
-                  md:w-[380px]
-                  lg:w-[480px]
+                  w-[420px]
+                  xl:w-[500px]
                   object-contain
                   hover:scale-105
                   transition-transform
@@ -54,29 +53,29 @@ const About = () => {
           </div>
 
           {/* Right Side */}
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-left max-w-3xl mx-auto lg:max-w-none">
             <span className="block text-white font-medium tracking-widest uppercase">
               About Me
             </span>
 
-            <h2 className="cursive-font mt-3 text-4xl md:text-5xl font-bold text-[#6CB394] leading-tight">
+            <h2 className="cursive-font mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#6CB394] leading-tight">
               Passionate MERN Stack Developer
             </h2>
 
-            <p className="mt-6 text-gray-300 leading-relaxed text-lg">
+            <p className="mt-6 text-gray-300 leading-relaxed text-base md:text-lg max-w-md mx-auto lg:mx-0">
               I'm Rishav Kumar, a MERN Stack Developer focused on building
               scalable, responsive, and user-friendly web applications using
               modern technologies.
             </p>
 
-            <p className="mt-4 text-gray-300 leading-relaxed">
+            <p className="mt-4 text-gray-300 leading-relaxed max-w-md mx-auto lg:mx-0">
               Currently expanding my expertise in Next.js, backend architecture,
               system design, and building real-world solutions that solve
               practical problems.
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-4 mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
               {stats.map((stat) => (
                 <div
                   key={stat.label}
