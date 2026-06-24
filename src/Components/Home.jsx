@@ -36,14 +36,14 @@ const Home = () => {
           {/* Center */}
           <div className="h-full flex justify-center items-end">
             <img
-              src="/pro1.png"
+              src="/Images/image.png"
               alt="profile"
               loading="lazy"
               className="
 w-full
 max-w-[260px]
 sm:max-w-[320px]
-md:max-w-[550px]
+md:max-w-[460px]
 object-cover
 "
             />
